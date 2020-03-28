@@ -1,5 +1,6 @@
 # CostCountOnline
-CostCount app in typescript
+
+CostCount is a application where it is possible to calculate your expenses
 
 ## FUNCTIONAL
 
