@@ -27,10 +27,10 @@ CostCount app in typescript
 
 ## Screens description
 1. Login Screen
- - Elements:
+    - Elements:
 > Navigation bar whith logo and two buttons
 > Block with two inputs and button
-- Functional:
+    - Functional:
 > Create account
 > Account login
 > Connect with FireBase
