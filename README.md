@@ -64,17 +64,17 @@ CostCount app in typescript
         > Filter data
         
         
- ## Work plan for project
+ ## Work plan for the project
  1. First Screen
     - Create Navigation Bar 
     - Add ability create account
     - Add ability authorization
     
- 2. Create Second Screen
+ 2. Second Screen
     - Get data and create a profile panel
-    - Add block with registration of checks
-    - Add block with list and show data
-    - Create panel with filter
-    - Add block with graphs
+    - Add a block with the registration of checks
+    - Add a block with a list and show data
+    - Create a panel with filter
+    - Add a block with graphs
 
 
