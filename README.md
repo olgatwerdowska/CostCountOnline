@@ -3,7 +3,7 @@ CostCount app in typescript
 
 ## FUNCTIONAL
 
- >Registration of checks, amounts and dates
+ >Registration of checks, amounts, and dates
  
  >List of checks and receipts
  
@@ -11,7 +11,7 @@ CostCount app in typescript
  
  >Storage of all of the above
  
- >Ability create personal profile
+ >Ability create a personal profile
  
  >Ability to sort by categories, for example (food, transport, entertainment..)
 
@@ -29,7 +29,7 @@ CostCount app in typescript
 
 1. Login Screen
     - Elements:
-        > Navigation bar whith logo and two buttons
+        > Navigation bar with logo and two buttons
         
         > Block with two inputs and button
     
@@ -53,13 +53,13 @@ CostCount app in typescript
         
         > Block with graphs
         
-        > Block with registration of checks
+        > Block with the registration of checks
  
         
      - Functional
-        > Connect with database, get data and show this in blocks
+        > Connect with the database, get data and show this in blocks
         
-        > Add data in database
+        > Add data in the database
         
         > Filter data
 
