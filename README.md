@@ -1,8 +1,8 @@
 # CostCountOnline
 CostCount app in typescript
 
-## Funcrional
-================
+## FUNCTIONAL
+
 
  >Registration of checks, amounts and dates
  
