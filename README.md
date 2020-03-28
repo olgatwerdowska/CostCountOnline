@@ -1,4 +1,4 @@
-# CostCountOnline
+# CostCountOnline   ![Альтернативный текст](https://cdn.pixabay.com/photo/2017/08/04/07/57/calculator-2579302_960_720.jpg)
 
 CostCount is a application where it is possible to calculate your expenses
 
