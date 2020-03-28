@@ -56,11 +56,11 @@ CostCount app in typescript
         > Block with registration of checks
  
         
-     -Functional
-       > Connect with database, get data and show this in blocks
+      -Functional
+        > Connect with database, get data and show this in blocks
         
-       > Add data in database
+        > Add data in database
         
-       > Filter data
+        > Filter data
 
 
