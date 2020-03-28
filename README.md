@@ -3,7 +3,6 @@ CostCount app in typescript
 
 ## FUNCTIONAL
 
-
  >Registration of checks, amounts and dates
  
  >List of checks and receipts
@@ -14,4 +13,15 @@ CostCount app in typescript
  
  >Ability create personal profile
  
- >Ability to sort by categories, for example (food, transport, housing..)
+ >Ability to sort by categories, for example (food, transport, entertainment..)
+
+## TECHNOLOGY
+
+>HTML
+
+>CSS
+
+>TYPESCRIPT
+
+>FIREBASE
+
