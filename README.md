@@ -28,8 +28,9 @@ CostCount app in typescript
 ## Screens description
 1. Login Screen
     - Elements:
-> Navigation bar whith logo and two buttons
-> Block with two inputs and button
+    > Navigation bar whith logo and two buttons
+    > Block with two inputs and button
+
     - Functional:
 > Create account
 > Account login
