@@ -17,11 +17,11 @@ CostCount app in typescript
 
 ## TECHNOLOGY
 
-+HTML
++ HTML
 
-+CSS
++ CSS
 
-+TYPESCRIPT
++ TYPESCRIPT
 
-+FIREBASE
++ FIREBASE
 
