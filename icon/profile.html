@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+      <div class="box">
+          <div class="left-side-bar">
+              <!-- <div class="square"></div> -->
+              <ul class="icons">
+                  <li class="icon"><img src="icon/unnamed.png" alt=""></li>
+                  <li class="icon"><img src="icon/list-ingredients-64.png" alt=""></li>
+                  <li class="icon"><img src="icon/plus-4-64.png" alt=""></li>
+                  <li class="icon"><img src="icon/line-chart-64.png" alt=""></li>
+              </ul>
+
+              <div class="bottom-icon">
+                <button class="singOut" id="singOut"><img src="icon/door-8-48.png" alt=""></button>
+              </div>
+          </div>
+          <div class="wrap-content">
+            <div class="top-nav">
+                <img src="img/logo.png" alt="img" class="logo">
+                <p class="navbar-text">Your online office</p>
+            </div>
+            <div class="content">
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Add your position</h5>
+                      <div class="form-group">
+                        <h6 class="card-subtitle mb-2 text-muted">Title</h6>
+                        <input type="text" class="form-control" id="title-position">
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                      <div class="form-group">
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-append">
+                          <label class="input-group-text" for="inputGroupSelect02">Type</label>
+                        </div>
+                        <select class="custom-select" id="type-position">
+                          <option selected>Choose...</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-append">
+                          <label class="input-group-text" for="inputGroupSelect02">Date</label>
+                        </div>
+                        <input class="form-control" type="date"  id="date">
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-append">
+                          <label class="input-group-text" for="inputGroupSelect02">Coust</label>
+                        </div>
+                        <input class="form-control" type="number" id="coust">
+                      </div>
+                      <button class="btn btn-danger" type="submit" id="add-position">Submit form</button>
+                      </div>
+                    </div>
+
+                </div>
+                <div class="col-md-8">
+                  <div class="card list">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="input-group mb-3">
+                          <div class="input-group-append">
+                            <label class="input-group-text" for="inputGroupSelect02">Type</label>
+                          </div>
+                          <select class="custom-select" id="typeFilterParameter">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="input-group mb-3 ">
+                          <div class="input-group-append">
+                            <label class="input-group-text" for="inputGroupSelect02">Date</label>
+                          </div>
+                          <input class="form-control" type="date"  id="dateFilterParameter">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-danger filter" type="submit" id="filter-btn">Filter</button>
+                      </div>
+                      <div class="col-md-2">
+                        <button type="button" class="btn btn-link seeAll" id="show-all">Show All</button>
+                      </div>
+                    </div>
+                    <div class="wraplist"  id="cardList">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script> 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--JavaScript -->
+    <script src="js/config-firebase.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>
