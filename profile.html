@@ -1,89 +1,201 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/profile.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dataRangeModule/pickmeup.css">
 
-  </head>
-  <body>
-      <div class="box">
-          <div class="left-side-bar">
-              <!-- <div class="square"></div> -->
-              <ul class="icons">
-                  <li class="icon"><img src="icon/unnamed.png" alt=""></li>
-                  <li class="icon"><img src="icon/list-ingredients-64.png" alt=""></li>
-                  <li class="icon"><img src="icon/plus-4-64.png" alt=""></li>
-                  <li class="icon"><img src="icon/line-chart-64.png" alt=""></li>
-              </ul>
+</head>
 
-              <div class="bottom-icon">
-                <button class="singOut" id="singOut"><img src="icon/door-8-48.png" alt=""></button>
+<body>
+  <div class="box">
+    <div class="left-side-bar">
+      <ul class="icons">
+        <li class="icon"><img src="icon/unnamed.png" alt=""></li>
+        <li class="icon"><img src="icon/list-ingredients-64.png" alt=""></li>
+        <li class="icon"><img src="icon/plus-4-64.png" alt=""></li>
+        <li class="icon"><img src="icon/line-chart-64.png" alt=""></li>
+      </ul>
+
+      <div class="bottom-icon">
+        <button class="singOut" id="singOut"><img src="icon/door-8-48.png" alt=""></button>
+      </div>
+    </div>
+    <div class="wrap-content">
+      <div class="top-nav">
+        <img src="img/logo.png" alt="img" class="logo">
+        <p class="navbar-text">Your online office</p>
+      </div>
+      <div class="content">
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Add your position</h5>
+                <div class="form-group">
+                  <h6 class="card-subtitle mb-2 text-muted">Title</h6>
+                  <input type="text" class="form-control" id="title-position">
+                </div>
+                <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                <div class="form-group">
+                  <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <label class="input-group-text" for="inputGroupSelect02">Type</label>
+                  </div>
+                  <select class="custom-select" id="type-position">
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <label class="input-group-text" for="inputGroupSelect02">Date</label>
+                  </div>
+                  <input class="form-control" type="date" id="date">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <label class="input-group-text" for="inputGroupSelect02">Coust</label>
+                  </div>
+                  <input class="form-control" type="number" id="coust">
+                </div>
+                <button class="btn btn-danger" type="submit" id="add-position">Submit form</button>
               </div>
-          </div>
-          <div class="wrap-content">
-            <div class="top-nav">
-                <img src="img/logo.png" alt="img" class="logo">
-                <p class="navbar-text">Your online office</p>
             </div>
-            <div class="content">
-              <div class="card" style="width: 25rem;">
-                <div class="card-body">
-                  <h5 class="card-title">App your position</h5>
-                  <div class="form-group">
-                    <h6 class="card-subtitle mb-2 text-muted">Title</h6>
-                    <input type="text" class="form-control" id="title-position">
-                  </div>
-                  <h6 class="card-subtitle mb-2 text-muted">Description</h6>
-                  <div class="form-group">
-                    <textarea class="form-control" id="description" rows="3"></textarea>
-                  </div>
+
+          </div>
+          <div class="col-md-9">
+            <div class="card list">
+              <div class="row">
+                <div class="col-md-3">
                   <div class="input-group mb-3">
                     <div class="input-group-append">
                       <label class="input-group-text" for="inputGroupSelect02">Type</label>
                     </div>
-                    <select class="custom-select" id="type-position">
-                      <option selected>Choose...</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                    <select class="custom-select" id="typeFilterParameter">
                     </select>
                   </div>
-                  <div class="input-group mb-3">
+                </div>
+                <div class="col-md-4">
+                  <div class="input-group mb-3 ">
                     <div class="input-group-append">
                       <label class="input-group-text" for="inputGroupSelect02">Date</label>
                     </div>
-                    <input class="form-control" type="date" value="2020-04-06" id="date">
+                    <input class="form-control" type="date" id="dateFilterParameter">
                   </div>
-                  <button class="btn btn-danger" type="submit" id="add-position">Submit form</button>
+                </div>
+                <div class="col-md-3">
+                  <button class="btn btn-danger filter" type="submit" id="filter-btn">Filter</button>
+                </div>
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-link seeAll" id="show-all">Show All</button>
+                </div>
+              </div>
+              <div class="wraplist" id="cardList">
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row profile-wrap">
+          <div class="col-md-3">
+            <div class="card profile-box">
+              <div class="row">
+                <div class="col-md-3">
+                  <img src="icon/icons8-life-cycle-100.png" class="card-img-top profile-img" alt="...">
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <h5 class="card-title profile-title">Welcome!</h5>
+                    <p class="card-text profile-text">In this section you can change your password and add your
+                      categories</p>
                   </div>
                 </div>
               </div>
+              <div class="card-body">
+                <div class="row newpassword">
+                  <div class="col-md-10">
+                    <p class="card-text profile-text">If you want to change a password, please click a button and we
+                      send the link in your email.</p>
+                  </div> 
+                  <div class="col-md-2">
+                    <button type="button" class="btn btn-danger" id="newPassword-btn">Send</button>
+                  </div> 
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Write new type" aria-label="Recipient's username"
+                    aria-describedby="button-addon2" id="new-type-input"> 
+                </div>
+                <button type="button" class="btn btn-danger profile-btn" id="btn-new-type">Add new type</button>
+                <h5 class="card-title profile-title2">Thank you for being with us.</h5>
+              </div>
             </div>
           </div>
+          <div class="col-md-9">
+            <div class="card charts">
+                <div class="charts-filters card-body">
+                  <div class="charts-filters-date">
+                    <section>
+                      <article>
+                        <div class="range"></div>
+                      </article>
+                    </section>
+                    <button  class="btn btn-light btn-filter-date" id="btn-filter-chart">Filter</button>
+                  </div>
+                </div>
+                <div class="charts-content" id="charts-content">
+                </div>
+              </div>
+          </div>
+        </div>
       </div>
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script> 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!--JavaScript -->
-    <script src="js/config-firebase.js"></script>
-    <script src="js/profile.js"></script>
-  </body>
+    </div>
+  </div>
+  </div>
+  
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+    <!--ChartsApi-->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+  <!--JavaScript -->
+  <script src="js/config-firebase.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/charts.js"></script>
+  <!--DataRange -->
+  <script src="dataRangeModule/demo.js"></script>
+  <script src="dataRangeModule/pickmeup.js"></script>
+  </script>
+
+
+</body>
+
 </html>

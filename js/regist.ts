@@ -29,7 +29,7 @@ class ControllerRegist {
             let controller:ControllerRegist = new ControllerRegist();
             controller.writeDataBase(userId,email);
             localStorage.setItem('user', userId);
-            window.location.href = "C:/Users/User/Desktop/CostCount/js/profile.ts";
+            window.location.href = "C:/Users/User/Desktop/CostCount/profile.html";
         })
         .catch(function(error) {
             let errorMessage = error.message;
@@ -44,6 +44,7 @@ class ControllerRegist {
         });
     }
 }
+
 
 window.onload = () => {
     const obj:ReagistUI = new ReagistUI();
