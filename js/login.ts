@@ -22,7 +22,8 @@ class ControllerLogin {
         firebase.auth().signInWithEmailAndPassword(email, password).then(function(current) {
             let userId = current.user.uid;
             localStorage.setItem('user', userId);
-            window.location.href = "C:/Users/User/Desktop/CostCount/profile.html";
+            window.location.href = "profile.html";
+            localStorage.setItem("charts", "");
             
         })
         .catch(function (error) {

@@ -29,7 +29,8 @@ class ControllerRegist {
             let controller:ControllerRegist = new ControllerRegist();
             controller.writeDataBase(userId,email);
             localStorage.setItem('user', userId);
-            window.location.href = "C:/Users/User/Desktop/CostCount/profile.html";
+            window.location.href = "profile.html";
+            localStorage.setItem("charts", "");
         })
         .catch(function(error) {
             let errorMessage = error.message;
